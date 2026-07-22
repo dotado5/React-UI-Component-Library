@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '../src';
+import { Button, Input, Modal } from '../src';
 import type { ButtonVariant } from '../src';
 
 const variants: ButtonVariant[] = ['primary', 'secondary', 'danger', 'outline', 'ghost'];
@@ -7,6 +7,7 @@ const variants: ButtonVariant[] = ['primary', 'secondary', 'danger', 'outline', 
 export function App() {
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <main className="min-h-screen bg-rgt-bg text-rgt-fg p-8 max-w-3xl mx-auto flex flex-col gap-10">
@@ -57,6 +58,53 @@ export function App() {
         <Button fullWidth variant="primary">
           Full width
         </Button>
+      </section>
+
+      <section className="grid gap-4 sm:grid-cols-2">
+        <h2 className="text-lg font-semibold sm:col-span-2">Input</h2>
+        <Input label="Email" type="email" placeholder="you@example.com" helperText="We never share it." />
+        <Input label="Full name" required placeholder="Jane Doe" />
+        <Input label="Password" type="password" placeholder="••••••••" />
+        <Input label="Username" error="That username is taken." defaultValue="taken" />
+        <Input
+          label="Search"
+          placeholder="Search…"
+          prefixIcon={
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          }
+        />
+        <Input label="Disabled" disabled placeholder="Unavailable" />
+      </section>
+
+      <section className="flex flex-col gap-4">
+        <h2 className="text-lg font-semibold">Modal</h2>
+        <div>
+          <Button variant="danger" onClick={() => setModalOpen(true)}>
+            Delete account
+          </Button>
+        </div>
+        <Modal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          title="Delete account"
+          aria-describedby="delete-desc"
+        >
+          <p id="delete-desc" className="text-rgt-secondary">
+            This action is permanent and cannot be undone. Are you sure you want to delete your
+            account?
+          </p>
+          <div className="mt-6 flex justify-end gap-3">
+            <Button variant="ghost" onClick={() => setModalOpen(false)}>
+              Cancel
+            </Button>
+            <Button variant="danger" onClick={() => setModalOpen(false)}>
+              Delete
+            </Button>
+          </div>
+        </Modal>
       </section>
     </main>
   );

@@ -11,12 +11,13 @@ component is a repeatable checklist**, not a redesign. See
 ### v1 — Core (current)
 Prove the full pipeline end-to-end on three components.
 
-- [ ] **Button**
-- [ ] **Input**
-- [ ] **Modal**
-- [ ] Library build (ESM + CJS + types) + precompiled `styles.css`
-- [ ] Demo/showcase app renders all v1 components
-- [ ] Coverage ≥95% gate wired into Vitest
+- [x] **Button**
+- [x] **Input**
+- [x] **Modal** (+ reusable `useFocusTrap` / `useScrollLock` hooks)
+- [x] Library build (ESM + CJS + types) + precompiled `styles.css`
+- [x] Demo/showcase app renders all v1 components
+- [x] Coverage ≥95% gate wired into Vitest (currently 100%)
+- [ ] Integration + functional test suites (Login Form, Delete Confirmation, Modal Flow)
 
 ### v2 — Supporting components (Phase 2)
 Expand the set once the pipeline is proven.
