@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+
+/*
+ * Design tokens.
+ *
+ * Tailwind v4 `@theme` values are emitted as CSS custom properties on :root,
+ * so consumers can re-theme the library WITHOUT Tailwind simply by overriding
+ * these variables, e.g.:
+ *
+ *   :root { --color-rgt-primary: #0ea5e9; }
+ *
+ * Tokens are namespaced with `rgt-` so the generated utilities (bg-rgt-primary,
+ * rounded-rgt-md, ...) do not collide with a consumer's own theme.
+ */
+@theme {
+  /* Brand + semantic colors */
+  --color-rgt-primary: #4f46e5;
+  --color-rgt-primary-hover: #4338ca;
+  --color-rgt-secondary: #4b5563;
+  --color-rgt-secondary-hover: #374151;
+  --color-rgt-danger: #dc2626;
+  --color-rgt-danger-hover: #b91c1c;
+
+  --color-rgt-fg: #111827;
+  --color-rgt-muted: #f3f4f6;
+  --color-rgt-border: #d1d5db;
+  --color-rgt-ring: #6366f1;
+  --color-rgt-bg: #ffffff;
+
+  /* Radii */
+  --radius-rgt-sm: 0.25rem;
+  --radius-rgt-md: 0.375rem;
+  --radius-rgt-lg: 0.5rem;
+}
