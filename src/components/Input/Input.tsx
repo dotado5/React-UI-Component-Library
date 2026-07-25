@@ -118,15 +118,16 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   return (
     <div className={cn('flex flex-col gap-1.5', containerClassName)}>
       {label && (
-        <label htmlFor={inputId} className="text-sm font-medium text-rgt-fg">
-          {label}
+        <div className="flex items-center gap-1">
+          <label htmlFor={inputId} className="text-sm font-medium text-rgt-fg">
+            {label}
+          </label>
           {required && (
-            <span className="text-rgt-danger" aria-hidden="true">
-              {' '}
+            <span className="text-sm font-medium text-rgt-danger" aria-hidden="true">
               *
             </span>
           )}
-        </label>
+        </div>
       )}
 
       <div className="relative flex items-center">

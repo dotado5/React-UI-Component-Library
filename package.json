@@ -1,9 +1,17 @@
 {
-  "name": "reactgentester",
+  "name": "cobalt-ui",
   "version": "0.1.0",
   "description": "A reusable, accessible, production-quality React UI component library.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotado5/React-UI-Component-Test-Suite.git"
+  },
+  "homepage": "https://github.com/dotado5/React-UI-Component-Test-Suite#readme",
+  "bugs": {
+    "url": "https://github.com/dotado5/React-UI-Component-Test-Suite/issues"
+  },
   "sideEffects": [
     "**/*.css"
   ],
@@ -29,7 +37,8 @@
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "react": ">=18",

@@ -1,4 +1,4 @@
-# reactgentester — Roadmap
+# cobalt-ui — Roadmap
 
 How the library grows beyond v1. The repo is structured so that **adding a
 component is a repeatable checklist**, not a redesign. See
@@ -17,20 +17,29 @@ Prove the full pipeline end-to-end on three components.
 - [x] Library build (ESM + CJS + types) + precompiled `styles.css`
 - [x] Demo/showcase app renders all v1 components
 - [x] Coverage ≥95% gate wired into Vitest (currently 100%)
-- [ ] Integration + functional test suites (Login Form, Delete Confirmation, Modal Flow)
+- [x] Integration + functional test suites (Login Form, Delete Confirmation, Login/Modal/Validation/Accessibility flows)
+- [x] Per-component README docs (Definition of Done item)
 
-### v2 — Supporting components (Phase 2)
+**v1 is complete.** All Core 3 components ship implemented, typed, accessible,
+documented, and covered by unit + integration + functional tests at 100%.
+
+### v2 — Supporting components (Phase 2) — ✅ complete
 Expand the set once the pipeline is proven.
 
-| Component | Key features |
-|---|---|
-| **Checkbox** | Controlled, disabled, label, indeterminate state |
-| **Radio Group** | Multiple options, controlled, disabled |
-| **Switch** | On/off, disabled, keyboard accessible, labels |
-| **Badge** | Variants, sizes, rounded, dot indicator |
-| **Spinner** | Sizes, variants, accessible loading label |
-| **Alert** | Success/warning/error/info, optional dismiss, icon support |
-| **Card** | Header/body/footer, shadow variants, clickable state |
+| Component | Key features | Status |
+|---|---|---|
+| **Checkbox** | Controlled, disabled, label, indeterminate state | ✅ done |
+| **Radio Group** | Multiple options, controlled, disabled | ✅ done |
+| **Switch** | On/off, disabled, keyboard accessible, labels | ✅ done |
+| **Badge** | Variants, sizes, rounded, dot indicator | ✅ done |
+| **Spinner** | Sizes, variants, accessible loading label | ✅ done |
+| **Alert** | Success/warning/error/info, optional dismiss, icon support | ✅ done |
+| **Card** | Header/body/footer, shadow variants, clickable state | ✅ done |
+
+All Phase 2 components ship implemented, typed, accessible, documented, and
+covered. The spec's remaining integration scenarios — **Settings Panel**
+(Card + Switch + Checkbox + Button) and **Alert Flow** (Button + Alert) — are
+now implemented too, completing §6.2 of the requirements.
 
 ### v3+ — Future components
 Textarea · Select · Combobox · Dropdown Menu · Accordion · Tabs · Tooltip ·
@@ -39,11 +48,11 @@ Breadcrumb · Table · Theme Provider · Form components · Date Picker
 
 ### Tooling roadmap
 - [ ] Storybook documentation site
-- [ ] GitHub Actions CI (typecheck, lint, test, coverage, build)
+- [x] GitHub Actions CI (typecheck, lint, test, coverage, build, pack) on Node 20 + 22
 - [ ] ESLint + Prettier config hardening
 - [ ] Husky + lint-staged pre-commit hooks
-- [ ] Automated release workflow (changesets/semantic-release)
-- [ ] npm publish pipeline for `reactgentester`
+- [x] Automated release workflow (tag-driven, see [docs/PUBLISHING.md](./docs/PUBLISHING.md))
+- [x] npm publish pipeline for `cobalt-ui` (GitHub Actions, provenance-signed)
 
 ---
 
