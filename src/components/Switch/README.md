@@ -5,7 +5,7 @@ it is keyboard operable, participates in forms, and supports controlled and
 uncontrolled usage natively.
 
 ```tsx
-import { Switch } from 'cobalt-ui';
+import { Switch } from '@dotado/cobalt-ui';
 
 <Switch label="Enable notifications" />;
 ```

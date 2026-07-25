@@ -1,5 +1,5 @@
 // Ships the precompiled stylesheet as a side effect of the library build.
-// Consumers still import it explicitly via `cobalt-ui/styles.css`.
+// Consumers still import it explicitly via `@dotado/cobalt-ui/styles.css`.
 import './styles/index.css';
 
 export { Button } from './components/Button';

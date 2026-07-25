@@ -4,7 +4,7 @@ Indeterminate loading indicator. Exposes `role="status"` with a visually hidden
 label so assistive technology announces the loading state.
 
 ```tsx
-import { Spinner } from 'cobalt-ui';
+import { Spinner } from '@dotado/cobalt-ui';
 
 <Spinner />;
 ```

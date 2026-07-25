@@ -4,7 +4,7 @@ An accessible group of radio buttons, rendered as a `<fieldset>`/`<legend>` so
 assistive technology announces the group name.
 
 ```tsx
-import { RadioGroup } from 'cobalt-ui';
+import { RadioGroup } from '@dotado/cobalt-ui';
 
 <RadioGroup
   label="Size"

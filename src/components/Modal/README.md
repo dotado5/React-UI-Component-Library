@@ -5,7 +5,7 @@ trapping and restoration, body scroll locking, Escape-to-close and
 overlay-click-to-close.
 
 ```tsx
-import { Modal, Button } from 'cobalt-ui';
+import { Modal, Button } from '@dotado/cobalt-ui';
 
 const [open, setOpen] = useState(false);
 

@@ -4,7 +4,7 @@ An accessible text input with label, helper/error text, optional icons and a
 password visibility toggle. Forwards its ref and spreads native input props.
 
 ```tsx
-import { Input } from 'cobalt-ui';
+import { Input } from '@dotado/cobalt-ui';
 
 <Input label="Email" type="email" placeholder="you@example.com" />;
 ```

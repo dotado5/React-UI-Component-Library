@@ -4,7 +4,7 @@ An accessible, themeable button. Renders a native `<button>`, forwards its ref,
 and spreads all native button props.
 
 ```tsx
-import { Button } from 'cobalt-ui';
+import { Button } from '@dotado/cobalt-ui';
 
 <Button variant="primary" onClick={save}>
   Save changes

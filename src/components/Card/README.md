@@ -3,7 +3,7 @@
 Surface container with optional header and footer regions.
 
 ```tsx
-import { Card } from 'cobalt-ui';
+import { Card } from '@dotado/cobalt-ui';
 
 <Card header="Account" footer={<Button>Save</Button>}>
   Card body content

@@ -4,7 +4,7 @@ An accessible checkbox built on a native `<input type="checkbox">`, so
 controlled/uncontrolled behavior and form participation work natively.
 
 ```tsx
-import { Checkbox } from 'cobalt-ui';
+import { Checkbox } from '@dotado/cobalt-ui';
 
 <Checkbox label="Accept terms" />;
 ```

@@ -4,7 +4,7 @@ Small status/label indicator. Purely presentational — renders a `<span>` and
 spreads native span props.
 
 ```tsx
-import { Badge } from 'cobalt-ui';
+import { Badge } from '@dotado/cobalt-ui';
 
 <Badge variant="success" dot rounded>Active</Badge>;
 ```

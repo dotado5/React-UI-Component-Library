@@ -3,7 +3,7 @@
 Contextual feedback message with an optional title, icon and dismiss button.
 
 ```tsx
-import { Alert } from 'cobalt-ui';
+import { Alert } from '@dotado/cobalt-ui';
 
 <Alert variant="success" title="Saved">
   Your changes were saved.

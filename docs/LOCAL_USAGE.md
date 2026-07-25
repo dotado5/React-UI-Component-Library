@@ -39,18 +39,19 @@ npm run build
 npm pack
 ```
 
-This writes `cobalt-ui-0.1.0.tgz` in the library root. Install it into the app:
+This writes `dotado-cobalt-ui-0.2.0.tgz` in the library root (a scoped package
+packs with its scope as a filename prefix). Install it into the app:
 
 ```bash
 # in the app
-npm install /absolute/path/to/cobalt-ui/cobalt-ui-0.1.0.tgz
+npm install /absolute/path/to/cobalt-ui/dotado-cobalt-ui-0.2.0.tgz
 ```
 
 Then use it normally:
 
 ```tsx
-import { Button } from 'cobalt-ui';
-import 'cobalt-ui/styles.css';
+import { Button } from '@dotado/cobalt-ui';
+import '@dotado/cobalt-ui/styles.css';
 ```
 
 To pick up changes: re-run `npm run build && npm pack` in the library, then
@@ -71,7 +72,7 @@ npm link
 
 ```bash
 # in the app
-npm link cobalt-ui
+npm link @dotado/cobalt-ui
 ```
 
 Rebuild the library after edits (or run a watch build) and the app sees the
@@ -107,7 +108,7 @@ resolve: {
 
 ```bash
 # in the app
-npm unlink cobalt-ui
+npm unlink @dotado/cobalt-ui
 npm install
 
 # in the library
@@ -124,7 +125,7 @@ step, reference the library by path in the **app's** `package.json`:
 ```json
 {
   "dependencies": {
-    "cobalt-ui": "file:../cobalt-ui"
+    "@dotado/cobalt-ui": "file:../cobalt-ui"
   }
 }
 ```
@@ -145,8 +146,8 @@ re-run `npm install` in the app after rebuilding to refresh the copy.
 A quick smoke test in the app:
 
 ```tsx
-import { Button } from 'cobalt-ui';
-import 'cobalt-ui/styles.css';
+import { Button } from '@dotado/cobalt-ui';
+import '@dotado/cobalt-ui/styles.css';
 
 export function Smoke() {
   return <Button variant="primary">It works</Button>;
@@ -155,14 +156,14 @@ export function Smoke() {
 
 If the button renders **and is styled** (indigo background), the JS and the CSS
 are both resolving. If it renders **unstyled**, you forgot the
-`import 'cobalt-ui/styles.css'`.
+`import '@dotado/cobalt-ui/styles.css'`.
 
 ## Troubleshooting
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| `Cannot find module 'cobalt-ui'` | Not installed / not linked | Re-do the install/link step |
-| Components render but are unstyled | Missing stylesheet import | Add `import 'cobalt-ui/styles.css'` |
+| `Cannot find module '@dotado/cobalt-ui'` | Not installed / not linked | Re-do the install/link step |
+| Components render but are unstyled | Missing stylesheet import | Add `import '@dotado/cobalt-ui/styles.css'` |
 | "Invalid hook call" | Two copies of React (linking) | Dedupe React — see the [link caveat](#the-react-invalid-hook-call-caveat) |
 | Changes not showing up | Stale build | Re-run `npm run build` in the library (and reinstall for tarball/file modes) |
 | Types not resolving | Old TS or missing build | Ensure `dist/index.d.ts` exists; TS ≥ 4.7 for the `exports` map |

@@ -36,28 +36,25 @@ recommended) enable 2FA on your account.
 
 ### 2. Check the package name is available
 
-The name in `package.json` is `cobalt-ui`. Confirm nobody else owns it:
-
-```bash
-npm view cobalt-ui
-```
-
-- **`404 Not Found`** → the name is free. 
-- **Anything else** → the name is taken; change `"name"` in `package.json`
-  (e.g. scope it as `@your-username/cobalt-ui`) before publishing. A scoped
-  name also needs `--access public`, which the workflow already passes.
+The name in `package.json` is `@dotado/cobalt-ui` — a **scoped** name under your
+npm username. Scoped names under your own account are always yours to publish, so
+there's no availability check to worry about (this is also why we scoped it: the
+unscoped `cobalt-ui` was blocked by npm as too similar to an existing `cobalt_ui`).
+A scoped package must be published with `--access public` to be public, which the
+workflow already passes (and `publishConfig.access` in `package.json` enforces it
+for manual publishes too).
 
 ### 3. Create an npm access token
 
 1. Log in to npmjs.com → click your avatar → **Access Tokens**.
-2. **Generate New Token → Granular Access Token** (preferred) or **Classic →
-   Automation**.
-   - A **Granular** token: give it **Read and write** on packages, and scope it
-     to just this package (or your whole account for the first publish, since the
-     package doesn't exist yet — you can tighten it afterwards).
-   - An **Automation** token (classic) works too and bypasses 2FA in CI, which is
-     what you want for an unattended workflow.
+2. **Generate New Token → Classic Token → Automation.**
 3. Copy the token now — npm shows it only once.
+
+> **Use a classic _Automation_ token — not a Granular or Publish token.** If your
+> npm account has 2FA enabled for writes (recommended, and often the default),
+> only Automation tokens bypass the one-time-password prompt. A Granular or
+> classic Publish token will fail the CI publish with `EOTP` ("requires a
+> one-time password"), because a GitHub Actions runner cannot enter a 2FA code.
 
 > A CI token is a credential. Never paste it into code, commits, or chat. It goes
 > only into the GitHub secret below, where it's encrypted.
@@ -117,7 +114,7 @@ Open the repo's **Actions** tab → the **Release** run. When it goes green, the
 package is live. Verify:
 
 ```bash
-npm view cobalt-ui version
+npm view @dotado/cobalt-ui version
 ```
 
 ---
@@ -161,14 +158,14 @@ npm version prerelease --preid=beta   # 0.2.0 -> 0.2.1-beta.0
 git push --follow-tags
 ```
 
-Then publish it under a separate dist-tag so `npm install cobalt-ui` still
+Then publish it under a separate dist-tag so `npm install @dotado/cobalt-ui` still
 gets the stable release. Change the workflow's publish line to:
 
 ```bash
 npm publish --provenance --access public --tag beta
 ```
 
-Consumers opt in with `npm install cobalt-ui@beta`. (For a permanent setup
+Consumers opt in with `npm install @dotado/cobalt-ui@beta`. (For a permanent setup
 you'd branch this logic on whether the tag contains a prerelease suffix — ask if
 you want that wired in.)
 
@@ -194,6 +191,7 @@ npm publish --access public
 |---|---|---|
 | Workflow didn't start | Pushed a branch, not a tag | `git push --follow-tags`; tag must match `v*.*.*` |
 | `Tag vX does not match package.json version` | Hand-made tag drifted from `package.json` | Use `npm version` so both are set together; delete/retag if needed |
+| `EOTP` / "requires a one-time password" | `NPM_TOKEN` is a Granular or Publish token, and 2FA is on | Replace it with a classic **Automation** token, then re-run the workflow |
 | `403 Forbidden` on publish | Bad/expired token, or name owned by someone else | Regenerate `NPM_TOKEN`; confirm name with `npm view` |
 | `402 Payment Required` | Publishing a **scoped** package without public access | Ensure `--access public` (already in the workflow) |
 | `You cannot publish over the previously published versions` | That version already exists on npm | Bump again — npm versions are immutable |
@@ -211,5 +209,5 @@ git checkout main && git pull
 npm version minor          # bumps package.json + creates git tag
 git push --follow-tags     # triggers the Release workflow
 # watch the Actions tab; then:
-npm view cobalt-ui version
+npm view @dotado/cobalt-ui version
 ```

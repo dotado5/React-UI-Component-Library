@@ -1,9 +1,12 @@
 {
-  "name": "cobalt-ui",
+  "name": "@dotado/cobalt-ui",
   "version": "0.2.0",
   "description": "A reusable, accessible, production-quality React UI component library.",
   "type": "module",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dotado5/React-UI-Component-Test-Suite.git"

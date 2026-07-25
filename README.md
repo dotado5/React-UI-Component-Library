@@ -15,7 +15,7 @@ React, TypeScript, Vite, Tailwind CSS v4, Vitest and React Testing Library.
 ## Installation
 
 ```bash
-npm install cobalt-ui
+npm install @dotado/cobalt-ui
 ```
 
 `react` and `react-dom` (v18 or v19) are peer dependencies.
@@ -23,8 +23,8 @@ npm install cobalt-ui
 ## Quick start
 
 ```tsx
-import { Button, Input, Modal } from 'cobalt-ui';
-import 'cobalt-ui/styles.css';
+import { Button, Input, Modal } from '@dotado/cobalt-ui';
+import '@dotado/cobalt-ui/styles.css';
 
 export function Example() {
   return (

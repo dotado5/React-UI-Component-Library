@@ -8,7 +8,7 @@ import {
   useScrollLock,
   useControllableState,
   getFocusableElements,
-} from 'cobalt-ui';
+} from '@dotado/cobalt-ui';
 ```
 
 ---

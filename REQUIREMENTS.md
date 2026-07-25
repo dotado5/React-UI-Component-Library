@@ -1,7 +1,7 @@
 # cobalt-ui — Project Requirements
 
 A reusable, production-quality React UI component library, published to npm as
-**`cobalt-ui`**. Built with an emphasis on reusability, accessibility, type
+**`@dotado/cobalt-ui`**. Built with an emphasis on reusability, accessibility, type
 safety, maintainability, and rigorous automated testing.
 
 > This document is the fine-tuned source of truth for the project. It supersedes
@@ -17,7 +17,7 @@ safety, maintainability, and rigorous automated testing.
 | **Build tool** | Vite (library mode) | ESM + CJS output, `.d.ts` generation. |
 | **Styling** | Tailwind CSS (v4) | Authored with utilities; **shipped as precompiled CSS**. |
 | **Theming** | CSS variables | Tailwind `@theme` tokens compile to CSS custom properties. |
-| **Distribution** | Publishable npm package | `cobalt-ui`; React as a `peerDependency`. |
+| **Distribution** | Publishable npm package | `@dotado/cobalt-ui`; React as a `peerDependency`. |
 | **Testing** | Vitest + React Testing Library | + `@testing-library/user-event`, `jest-dom`, `vitest-axe`. |
 | **Coverage** | ~95%+ pragmatic gate | Explicit, annotated ignores allowed. |
 | **v1 scope** | Core 3: Button, Input, Modal | Phase 2 and beyond in [ROADMAP.md](./ROADMAP.md). |
@@ -32,7 +32,7 @@ use Tailwind:
 1. Components are **authored** with Tailwind utility classes for developer
    experience.
 2. The build **precompiles** all utilities into a single stylesheet shipped at
-   `cobalt-ui/styles.css`. Consumers get styles with one import — no
+   `@dotado/cobalt-ui/styles.css`. Consumers get styles with one import — no
    Tailwind required on their end.
 3. All design tokens (colors, spacing, radii, etc.) are defined via Tailwind v4
    `@theme`, which emits **CSS custom properties**. Consumers **re-theme by
@@ -45,8 +45,8 @@ use Tailwind:
 **Consumer usage:**
 
 ```tsx
-import { Button } from 'cobalt-ui';
-import 'cobalt-ui/styles.css';
+import { Button } from '@dotado/cobalt-ui';
+import '@dotado/cobalt-ui/styles.css';
 
 <Button variant="primary">Save</Button>
 ```
