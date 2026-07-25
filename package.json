@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dotado5/React-UI-Component-Test-Suite.git"
+    "url": "git+https://github.com/dotado5/React-UI-Component-Library.git"
   },
-  "homepage": "https://github.com/dotado5/React-UI-Component-Test-Suite#readme",
+  "homepage": "https://github.com/dotado5/React-UI-Component-Library#readme",
   "bugs": {
-    "url": "https://github.com/dotado5/React-UI-Component-Test-Suite/issues"
+    "url": "https://github.com/dotado5/React-UI-Component-Library/issues"
   },
   "sideEffects": [
     "**/*.css"

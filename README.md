@@ -1,6 +1,6 @@
 # cobalt-ui
 
-[![CI](https://github.com/dotado5/React-UI-Component-Test-Suite/actions/workflows/ci.yml/badge.svg)](https://github.com/dotado5/React-UI-Component-Test-Suite/actions/workflows/ci.yml)
+[![CI](https://github.com/dotado5/React-UI-Component-Library/actions/workflows/ci.yml/badge.svg)](https://github.com/dotado5/React-UI-Component-Library/actions/workflows/ci.yml)
 
 A reusable, accessible, production-quality React UI component library — built with
 React, TypeScript, Vite, Tailwind CSS v4, Vitest and React Testing Library.
